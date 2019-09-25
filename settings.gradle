@@ -1,2 +1,2 @@
-include ':app', ':buildSrc', ':booster-gradle-plugin'
+include ':app', ':buildSrc', ':booster-gradle-plugin', ':booster-task-spi', ':booster-task-list-permission', ':booster-task-all'
 rootProject.name='Booster'

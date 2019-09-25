@@ -7,7 +7,10 @@ buildscript {
         jcenter()
 
         maven {
-            url uri('./repo')
+            url "./repo"
+        }
+        maven {
+            url "https://omooo2333.bintray.com/Plugin"
         }
     }
     dependencies {
@@ -15,6 +18,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        classpath 'com.novoda:bintray-release:0.9.1'
 
         classpath "top.omooo:booster-gradle-plugin:0.1.0"
     }
@@ -26,7 +31,10 @@ allprojects {
         jcenter()
 
         maven {
-            url uri('./repo')
+            url "./repo"
+        }
+        maven {
+            url "https://omooo2333.bintray.com/Plugin"
         }
     }
 }

@@ -1,0 +1,21 @@
+import top.omooo.buildsrc.Config
+
+apply from: "../gradle/booster.gradle"
+
+dependencies {
+    compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+    testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+}
+
+// upload to Bintray
+
+//apply plugin: 'com.novoda.bintray-release'
+//
+//publish {
+//    userOrg = 'omooo2333'
+//    groupId = 'top.omooo'
+//    repoName = 'Plugin'
+//    artifactId = 'plugin-task-spi'
+//    publishVersion = '0.1.1'
+//    desc = 'Interface for Task.'
+//}

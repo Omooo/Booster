@@ -1,0 +1,30 @@
+import top.omooo.buildsrc.Config
+
+apply from: "../gradle/booster.gradle"
+
+dependencies {
+
+    implementation gradleApi()
+
+    kapt "com.google.auto.service:auto-service:1.0-rc4"
+    implementation 'com.google.auto.service:auto-service:1.0-rc4'
+
+    implementation project(':booster-task-spi')
+    compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+    testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+}
+
+// upload to Bintray
+
+//apply plugin: 'com.novoda.bintray-release'
+//
+//publish {
+//    userOrg = 'omooo2333'
+//    groupId = 'top.omooo'
+//    repoName = 'Plugin'
+//    artifactId = 'task-list-permission'
+//    publishVersion = '0.1.0'
+//    desc = 'List permissions Task'
+//}
+
+// ./gradlew clean build bintrayUpload -PbintrayUser=omooo23333 -PbintrayKey=8b6eac80122c2ecd83fae2df225b9d6e93815010 -PdryRun=false

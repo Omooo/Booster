@@ -9,10 +9,13 @@ dependencies {
     implementation localGroovy()
     implementation gradleApi()
 
-//    kapt "com.google.auto.service:auto-service:${Config.auto_service_version}"
-//    implementation "com.google.auto.service:auto-service:${Config.auto_service_version}"
-//    compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
-//    testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+    kapt "com.google.auto.service:auto-service:1.0-rc4"
+    implementation "com.google.auto.service:auto-service:1.0-rc4"
+    compileOnly "com.android.tools.build:gradle:3.5.0"
+    testCompileOnly "com.android.tools.build:gradle:3.5.0"
+
+    implementation "top.omooo:plugin-task-spi:0.1.0"
+//    implementation project(":booster-task-spi")
 }
 
 group "top.omooo"
