@@ -21,7 +21,7 @@ buildscript {
 
         classpath 'com.novoda:bintray-release:0.9.1'
 
-        classpath "top.omooo:booster-gradle-plugin:0.1.0"
+        classpath "top.omooo:booster-gradle-plugin:0.1.1"
     }
 }
 

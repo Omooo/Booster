@@ -1,5 +1,21 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'java'
 
 dependencies {
-
+//    implementation project(":booster-task-list-permission")
+    implementation 'top.omooo:task-list-permission:0.1.1'
 }
 
+// upload to Bintray
+
+//apply plugin: 'com.novoda.bintray-release'
+//
+//publish {
+//    userOrg = 'omooo2333'
+//    groupId = 'top.omooo'
+//    repoName = 'Plugin'
+//    artifactId = 'plugin-task-all'
+//    publishVersion = '0.1.1'
+//    desc = 'All task for plugin'
+//}

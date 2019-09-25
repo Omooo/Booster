@@ -14,12 +14,14 @@ dependencies {
     compileOnly "com.android.tools.build:gradle:3.5.0"
     testCompileOnly "com.android.tools.build:gradle:3.5.0"
 
-    implementation "top.omooo:plugin-task-spi:0.1.0"
 //    implementation project(":booster-task-spi")
+    implementation 'top.omooo:plugin-task-spi:0.1.1'
+//    implementation project(":booster-task-all")
+//    implementation 'top.omooo:plugin-task-all:0.1.1'
 }
 
 group "top.omooo"
-version "0.1.0"
+version "0.1.1"
 
 uploadArchives {
     repositories {

@@ -17,13 +17,13 @@ dependencies {
 // upload to Bintray
 
 //apply plugin: 'com.novoda.bintray-release'
-//
+
 //publish {
 //    userOrg = 'omooo2333'
 //    groupId = 'top.omooo'
 //    repoName = 'Plugin'
 //    artifactId = 'task-list-permission'
-//    publishVersion = '0.1.0'
+//    publishVersion = '0.1.1'
 //    desc = 'List permissions Task'
 //}
 

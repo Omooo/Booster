@@ -19,17 +19,17 @@ import java.util.regex.Pattern
  * Created by Omooo
  * Date: 2019-09-25
  * Desc: 输出 app module 及其依赖的 AAR 权限
- * Use: ./gradlew listPermission
+ * Use: ./gradlew listPermissions
  * Output: permissions.json
  */
 
-class ListPermissionTask : DefaultTask() {
+internal open class ListPermissionTask : DefaultTask() {
 
     lateinit var variant: BaseVariant
 
     @TaskAction
     fun doAction() {
-        project.afterEvaluate { project ->
+        project.afterEvaluate {
             println(
                 """
                 *********************************************
