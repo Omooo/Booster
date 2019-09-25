@@ -1,0 +1,27 @@
+apply from: "../gradle/booster.gradle"
+
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'java'
+
+dependencies {
+
+    implementation localGroovy()
+    implementation gradleApi()
+
+//    kapt "com.google.auto.service:auto-service:${Config.auto_service_version}"
+//    implementation "com.google.auto.service:auto-service:${Config.auto_service_version}"
+//    compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+//    testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+}
+
+group "top.omooo"
+version "0.1.0"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}

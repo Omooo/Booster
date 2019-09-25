@@ -1,0 +1,2 @@
+include ':app', ':buildSrc', ':booster-gradle-plugin'
+rootProject.name='Booster'
