@@ -29,41 +29,39 @@ internal open class ListPermissionTask : DefaultTask() {
 
     @TaskAction
     fun doAction() {
-        project.afterEvaluate {
-            println(
-                """
+        println(
+            """
                 *********************************************
                 ********* -- ListPermissionTask -- **********
                 ***** -- projectDir/permissions.json -- *****
                 *********************************************
             """.trimIndent()
-            )
+        )
 
-            val map = HashMap<String, List<String>>()
+        val map = HashMap<String, List<String>>()
 
-            // 获取 app 模块的权限
-            val checkManifestTask = variant.checkManifestProvider.get() as CheckManifest
-            map["app"] = matchPermission(checkManifestTask.manifest.readText())
+        // 获取 app 模块的权限
+        val checkManifestTask = variant.checkManifestProvider.get() as CheckManifest
+        map["app"] = matchPermission(checkManifestTask.manifest.readText())
 
-            // 获取 app 依赖的 aar 权限
-            val variantData = (variant as ApplicationVariantImpl).variantData
-            val manifests = variantData.scope.getArtifactCollection(
-                AndroidArtifacts.ConsumedConfigType.RUNTIME_CLASSPATH,
-                AndroidArtifacts.ArtifactScope.ALL,
-                AndroidArtifacts.ArtifactType.MANIFEST
-            )
+        // 获取 app 依赖的 aar 权限
+        val variantData = (variant as ApplicationVariantImpl).variantData
+        val manifests = variantData.scope.getArtifactCollection(
+            AndroidArtifacts.ConsumedConfigType.RUNTIME_CLASSPATH,
+            AndroidArtifacts.ArtifactScope.ALL,
+            AndroidArtifacts.ArtifactType.MANIFEST
+        )
 
-            val artifacts = manifests.artifacts
-            for (artifact in artifacts) {
-                if (!map.containsKey(getArtifactName(artifact))
-                    && matchPermission(artifact.file.readText()).isNotEmpty()
-                ) {
-                    map[getArtifactName(artifact)] = matchPermission(artifact.file.readText())
-                }
+        val artifacts = manifests.artifacts
+        for (artifact in artifacts) {
+            if (!map.containsKey(getArtifactName(artifact))
+                && matchPermission(artifact.file.readText()).isNotEmpty()
+            ) {
+                map[getArtifactName(artifact)] = matchPermission(artifact.file.readText())
             }
-
-            writePermissionToFile(map)
         }
+
+        writePermissionToFile(map)
     }
 
     /**
@@ -97,6 +95,5 @@ internal open class ListPermissionTask : DefaultTask() {
         jsonFile.createNewFile()
         val json = JsonOutput.toJson(map)
         jsonFile.writeText(JsonOutput.prettyPrint(json), Charsets.UTF_8)
-        println(JsonOutput.prettyPrint(json))
     }
 }

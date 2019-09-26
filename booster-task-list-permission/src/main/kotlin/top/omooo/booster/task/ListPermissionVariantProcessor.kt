@@ -21,6 +21,8 @@ class ListPermissionVariantProcessor : VariantProcessor {
             ListPermissionTask::class.java
         ) {
             it.variant = variant
+            // 如果闭包返回false，则不能重用此任务的以前输出，并且将执行该任务
+            // 这意味着任务已经过期，不会从构建缓存加载任何输出
             it.outputs.upToDateWhen { false }
         }.also {
             listPermission.dependsOn(it)

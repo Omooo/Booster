@@ -24,7 +24,7 @@ dependencies {
 //    groupId = 'top.omooo'
 //    repoName = 'Plugin'
 //    artifactId = 'task-list-permission'
-//    publishVersion = '0.1.3'
+//    publishVersion = '0.1.5'
 //    desc = 'List permissions Task'
 //}
 
