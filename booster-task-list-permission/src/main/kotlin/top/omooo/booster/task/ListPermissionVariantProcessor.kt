@@ -15,6 +15,15 @@ class ListPermissionVariantProcessor : VariantProcessor {
     override fun process(variant: BaseVariant) {
         val variantData = (variant as ApplicationVariantImpl).variantData
         val tasks = variantData.scope.globalScope.project.tasks
-        tasks.create("listPermissions", ListPermissionTask::class.java)
+        val listPermission = tasks.findByName("listPermissions") ?: tasks.create("listPermissions")
+        tasks.create(
+            "list${variant.name.capitalize()}Permissions",
+            ListPermissionTask::class.java
+        ) {
+            it.variant = variant
+            it.outputs.upToDateWhen { false }
+        }.also {
+            listPermission.dependsOn(it)
+        }
     }
 }

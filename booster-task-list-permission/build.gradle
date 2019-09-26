@@ -9,7 +9,8 @@ dependencies {
     kapt "com.google.auto.service:auto-service:1.0-rc4"
     implementation 'com.google.auto.service:auto-service:1.0-rc4'
 
-    implementation project(':booster-task-spi')
+//    implementation project(':booster-task-spi')
+    compile 'top.omooo:plugin-task-spi:0.1.1'
     compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
     testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
 }
@@ -17,13 +18,13 @@ dependencies {
 // upload to Bintray
 
 //apply plugin: 'com.novoda.bintray-release'
-
+//
 //publish {
 //    userOrg = 'omooo2333'
 //    groupId = 'top.omooo'
 //    repoName = 'Plugin'
 //    artifactId = 'task-list-permission'
-//    publishVersion = '0.1.1'
+//    publishVersion = '0.1.3'
 //    desc = 'List permissions Task'
 //}
 
