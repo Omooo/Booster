@@ -1,0 +1,19 @@
+import top.omooo.buildsrc.Config
+
+apply from: "../gradle/booster.gradle"
+
+dependencies {
+    kapt "com.google.auto.service:auto-service:${Config.auto_service_version}"
+    compile "com.google.auto.service:auto-service:${Config.auto_service_version}"
+
+    compile gradleApi()
+
+    compile "org.ow2.asm:asm:${Config.asm_version}"
+    compile "org.ow2.asm:asm-analysis:${Config.asm_version}"
+    compile "org.ow2.asm:asm-commons:${Config.asm_version}"
+    compile "org.ow2.asm:asm-tree:${Config.asm_version}"
+    compile "org.ow2.asm:asm-util:${Config.asm_version}"
+
+    compile project(':booster-kotlinx')
+    compile project(':booster-transform-spi')
+}
