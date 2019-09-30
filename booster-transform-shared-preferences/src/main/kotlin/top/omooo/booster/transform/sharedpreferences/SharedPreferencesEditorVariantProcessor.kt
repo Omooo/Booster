@@ -18,7 +18,7 @@ class SharedPreferencesEditorVariantProcessor : VariantProcessor {
     override fun process(variant: BaseVariant) {
         if (variant !is LibraryVariant) {
             val variantData = (variant as ApplicationVariantImpl).variantData
-            variantData.scope.globalScope.project.dependencies.add("implementation", "")
+            variantData.scope.globalScope.project.dependencies.add("implementation", "'top.omooo:instrument-shared-preferences:0.1.0'")
         }
     }
 }

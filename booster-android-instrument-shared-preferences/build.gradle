@@ -1,0 +1,21 @@
+apply plugin: 'java-library'
+
+dependencies {
+    compileOnly project(":booster-android-api")
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+// upload to Bintray
+
+//apply plugin: 'com.novoda.bintray-release'
+
+//publish {
+//    userOrg = 'omooo2333'
+//    groupId = 'top.omooo'
+//    repoName = 'Plugin'
+//    artifactId = 'instrument-shared-preferences'
+//    publishVersion = '0.1.0'
+//    desc = 'Instrument for SharedPreferences'
+//}
