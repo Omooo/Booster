@@ -1,0 +1,13 @@
+import top.omooo.buildsrc.Config
+
+apply from: '../gradle/booster.gradle'
+
+dependencies {
+    kapt "com.google.auto.service:auto-service:${Config.auto_service_version}"
+
+    implementation project(":booster-task-spi")
+    implementation project(":booster-transform-asm")
+
+    compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+    testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+}
