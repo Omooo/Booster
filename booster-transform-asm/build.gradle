@@ -8,6 +8,8 @@ dependencies {
 
     compile gradleApi()
 
+    compile project(":booster-transform-spi")
+
     compile "org.ow2.asm:asm:${Config.asm_version}"
     compile "org.ow2.asm:asm-analysis:${Config.asm_version}"
     compile "org.ow2.asm:asm-commons:${Config.asm_version}"

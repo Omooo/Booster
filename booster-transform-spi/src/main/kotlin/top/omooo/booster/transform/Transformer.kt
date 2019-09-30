@@ -5,7 +5,7 @@ package top.omooo.booster.transform
  * Date: 2019-09-26
  * Desc:
  */
-interface Transformer {
+interface Transformer : TransformListener {
 
     fun transform(context: TransformContext, bytecode: ByteArray): ByteArray
 
