@@ -1,0 +1,24 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'java'
+
+dependencies {
+//    implementation project(':booster-transform-shared-preferences')
+    compile 'top.omooo:transform-shared-preferences:0.1.0'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+// upload to Bintray
+
+//apply plugin: 'com.novoda.bintray-release'
+//
+//publish {
+//    userOrg = 'omooo2333'
+//    groupId = 'top.omooo'
+//    repoName = 'Plugin'
+//    artifactId = 'plugin-transform-all'
+//    publishVersion = '0.1.0'
+//    desc = 'All Transform for Booster Plugin'
+//}

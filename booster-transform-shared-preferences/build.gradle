@@ -11,3 +11,16 @@ dependencies {
     compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
     testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
 }
+
+// upload to Bintray
+
+//apply plugin: 'com.novoda.bintray-release'
+//
+//publish {
+//    userOrg = 'omooo2333'
+//    groupId = 'top.omooo'
+//    repoName = 'Plugin'
+//    artifactId = 'transform-shared-preferences'
+//    publishVersion = '0.1.0'
+//    desc = 'Transform for SharedPreferences'
+//}
