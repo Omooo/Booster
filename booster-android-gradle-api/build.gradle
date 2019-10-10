@@ -1,0 +1,10 @@
+import top.omooo.buildsrc.Config
+
+apply from: "../gradle/booster.gradle"
+
+dependencies {
+    implementation gradleApi()
+    api project(':booster-kotlinx')
+    compileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+    testCompileOnly "com.android.tools.build:gradle:${Config.build_gradle_version}"
+}

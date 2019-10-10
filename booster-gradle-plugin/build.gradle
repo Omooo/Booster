@@ -20,6 +20,7 @@ dependencies {
     implementation 'top.omooo:plugin-task-all:0.1.6'
 //    implementation project(":booster-transform-all")
     implementation 'top.omooo:plugin-transform-all:0.1.0'
+    implementation project(":booster-transform-spi")
 
 }
 
